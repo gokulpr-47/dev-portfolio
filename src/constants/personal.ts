@@ -4,20 +4,20 @@ export const personalInfo: PersonalInfo = {
   name: "GOKUL P R",
   title: "SOFTWARE ENGINEER",
   subtitle: "Full Stack Developer & Tech Enthusiast",
-  email: "gokul@example.com",
+  email: "gokulpr47@gmail.com",
   location: "India",
   about: {
     background:
       "I'm a passionate software engineer with a strong foundation in modern web technologies. My journey in tech began with curiosity and has evolved into a deep love for creating innovative solutions that make a difference. I specialize in full-stack development with expertise in React, Node.js, and cloud technologies.",
     interests:
-      "Beyond coding, I'm fascinated by emerging technologies like AI/ML, blockchain, and sustainable tech solutions. I enjoy contributing to open-source projects, attending tech meetups, and staying updated with the latest industry trends. When not coding, you'll find me exploring new technologies or sharing knowledge with the developer community.",
+      "Outside of development, I enjoy learning about startups and technology, and building side projects for fun. I’m interested in productivity, personal growth, and fitness, and I like exploring new ideas and tools.",
     motivation:
       "I believe in writing clean, maintainable code and building user-centric applications. My approach combines technical excellence with creative problem-solving, always keeping the end-user experience at the forefront. I'm constantly learning and adapting to new challenges, which keeps my work exciting and innovative.",
   },
   socials: {
     linkedin: "https://linkedin.com/in/gokul-pr",
     github: "https://github.com/gokul-pr",
-    email: "mailto:gokul@example.com",
+    email: "mailto:gokulpr47@gmail.com",
   },
 };
 

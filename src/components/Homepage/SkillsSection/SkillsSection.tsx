@@ -2,6 +2,7 @@ import { Karla, Prompt } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./SkillsSection.module.css";
+import { skillIslands } from "@/constants";
 
 const prompt = Prompt({ weight: "600", subsets: ["latin"] });
 const prompt_light = Prompt({ weight: "400", subsets: ["latin"] });
@@ -316,7 +317,7 @@ export default function SkillsSection() {
         <div className="relative w-full h-[65vh] sm:h-[70vh] md:h-[75vh] max-w-6xl mx-auto">
           {/* Connection Bridges */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
-            {SKILL_ISLANDS.map((island) => {
+            {skillIslands.map((island) => {
               const connections = getConnectionPoints(island.id);
               return connections.map((point, index) => (
                 <line
@@ -344,125 +345,131 @@ export default function SkillsSection() {
           </svg>
 
           {/* Skill Islands */}
-          {SKILL_ISLANDS.filter(
-            (island) =>
-              !selectedCategory || island.category === selectedCategory
-          ).map((island) => (
-            <div
-              key={island.id}
-              className={`absolute transition-all duration-1000 cursor-pointer ${
-                hoveredIsland === island.id ? "z-20" : "z-10"
-              } ${styles.islandWrapper}`}
-              style={{
-                left: `${island.x}%`,
-                top: `${island.y}%`,
-                animationDelay: `${island.id * 0.2}s`,
-              }}
-              onMouseEnter={() => setHoveredIsland(island.id)}
-              onMouseLeave={() => setHoveredIsland(null)}
-              onClick={() => handleIslandClick(island.id)}
-            >
-              {/* Island Shadow */}
+          {skillIslands
+            .filter(
+              (island) =>
+                !selectedCategory || island.category === selectedCategory,
+            )
+            .map((island) => (
               <div
-                className="absolute blur-md transition-all duration-500"
+                key={island.id}
+                className={`absolute transition-all duration-1000 cursor-pointer ${
+                  hoveredIsland === island.id ? "z-20" : "z-10"
+                } ${styles.islandWrapper}`}
                 style={{
-                  width: `${island.size * 1.2}px`,
-                  height: `${island.size * 0.2}px`,
-                  backgroundColor: "rgba(0,0,0,0.2)",
-                  bottom: `-${island.size * 0.1}px`,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  opacity: hoveredIsland === island.id ? 0.4 : 0.2,
-                  clipPath:
-                    ORGANIC_SHAPES[island.shape as keyof typeof ORGANIC_SHAPES],
+                  left: `${island.x}%`,
+                  top: `${island.y}%`,
+                  animationDelay: `${island.id * 0.2}s`,
                 }}
-              />
-              {/* Island Base */}
-              <div
-                className="relative transition-all duration-700 cursor-pointer"
-                style={{
-                  width: `${island.size}px`,
-                  height: `${island.size}px`,
-                  background: getIslandColor(island),
-                  border: `1px solid ${island.color}40`,
-                  boxShadow:
-                    hoveredIsland === island.id
-                      ? `0 0 20px ${island.color}40, 0 0 40px ${island.color}20`
-                      : `0 0 10px ${island.color}20`,
-                  clipPath:
-                    ORGANIC_SHAPES[island.shape as keyof typeof ORGANIC_SHAPES],
-                  transform:
-                    hoveredIsland === island.id
-                      ? "scale(1.05)"
-                      : expandedIsland === island.id
-                      ? "scale(1.1)"
-                      : "scale(1)",
-                }}
+                onMouseEnter={() => setHoveredIsland(island.id)}
+                onMouseLeave={() => setHoveredIsland(null)}
+                onClick={() => handleIslandClick(island.id)}
               >
-                {/* Island Peak/Center */}
+                {/* Island Shadow */}
                 <div
-                  className="absolute transition-all duration-500"
+                  className="absolute blur-md transition-all duration-500"
                   style={{
-                    width: `${island.size * 0.5}px`,
-                    height: `${island.size * 0.5}px`,
-                    background: `radial-gradient(circle at 40% 40%, ${island.color}60, ${island.color}30)`,
-                    top: "25%",
-                    left: "25%",
-                    boxShadow: `inset 0 0 8px ${island.color}30`,
+                    width: `${island.size * 1.2}px`,
+                    height: `${island.size * 0.2}px`,
+                    backgroundColor: "rgba(0,0,0,0.2)",
+                    bottom: `-${island.size * 0.1}px`,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    opacity: hoveredIsland === island.id ? 0.4 : 0.2,
                     clipPath:
                       ORGANIC_SHAPES[
                         island.shape as keyof typeof ORGANIC_SHAPES
                       ],
                   }}
                 />
-                {/* Skill Name */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white font-bold text-xs drop-shadow-lg">
-                    {island.name}
-                  </span>
+                {/* Island Base */}
+                <div
+                  className="relative transition-all duration-700 cursor-pointer"
+                  style={{
+                    width: `${island.size}px`,
+                    height: `${island.size}px`,
+                    background: getIslandColor(island),
+                    border: `1px solid ${island.color}40`,
+                    boxShadow:
+                      hoveredIsland === island.id
+                        ? `0 0 20px ${island.color}40, 0 0 40px ${island.color}20`
+                        : `0 0 10px ${island.color}20`,
+                    clipPath:
+                      ORGANIC_SHAPES[
+                        island.shape as keyof typeof ORGANIC_SHAPES
+                      ],
+                    transform:
+                      hoveredIsland === island.id
+                        ? "scale(1.05)"
+                        : expandedIsland === island.id
+                          ? "scale(1.1)"
+                          : "scale(1)",
+                  }}
+                >
+                  {/* Island Peak/Center */}
+                  <div
+                    className="absolute transition-all duration-500"
+                    style={{
+                      width: `${island.size * 0.5}px`,
+                      height: `${island.size * 0.5}px`,
+                      background: `radial-gradient(circle at 40% 40%, ${island.color}60, ${island.color}30)`,
+                      top: "25%",
+                      left: "25%",
+                      boxShadow: `inset 0 0 8px ${island.color}30`,
+                      clipPath:
+                        ORGANIC_SHAPES[
+                          island.shape as keyof typeof ORGANIC_SHAPES
+                        ],
+                    }}
+                  />
+                  {/* Skill Name */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-white font-bold text-xs drop-shadow-lg">
+                      {island.name}
+                    </span>
+                  </div>
+                  {/* Click Indicator */}
+                  {hoveredIsland === island.id && (
+                    <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center animate-pulse">
+                      <span className="text-white text-xs">+</span>
+                    </div>
+                  )}
+                  {/* Proficiency Indicator */}
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+                    <div className="w-6 h-0.5 bg-white/20 rounded-full overflow-hidden">
+                      <div
+                        className="h-full rounded-full transition-all duration-1000"
+                        style={{
+                          width: `${island.proficiency}%`,
+                          background: `linear-gradient(90deg, ${island.color}, ${island.color}80)`,
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
-                {/* Click Indicator */}
-                {hoveredIsland === island.id && (
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center animate-pulse">
-                    <span className="text-white text-xs">+</span>
+                {/* Island Details Tooltip */}
+                <div
+                  className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-4 px-3 py-2 bg-black/90 backdrop-blur-sm text-white text-xs rounded-lg max-w-xs transition-all duration-300 ${
+                    hoveredIsland === island.id
+                      ? "opacity-100 visible"
+                      : "opacity-0 invisible"
+                  }`}
+                >
+                  <div className="font-semibold mb-1">
+                    {island.name} ({island.proficiency}%)
                   </div>
-                )}
-                {/* Proficiency Indicator */}
-                <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
-                  <div className="w-6 h-0.5 bg-white/20 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all duration-1000"
-                      style={{
-                        width: `${island.proficiency}%`,
-                        background: `linear-gradient(90deg, ${island.color}, ${island.color}80)`,
-                      }}
-                    />
-                  </div>
+                  <div className="text-white/80">{island.description}</div>
                 </div>
               </div>
-              {/* Island Details Tooltip */}
-              <div
-                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-4 px-3 py-2 bg-black/90 backdrop-blur-sm text-white text-xs rounded-lg max-w-xs transition-all duration-300 ${
-                  hoveredIsland === island.id
-                    ? "opacity-100 visible"
-                    : "opacity-0 invisible"
-                }`}
-              >
-                <div className="font-semibold mb-1">
-                  {island.name} ({island.proficiency}%)
-                </div>
-                <div className="text-white/80">{island.description}</div>
-              </div>
-            </div>
-          ))}
+            ))}
 
           {/* Expanded Island Modal */}
           {expandedIsland && (
             <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
               <div className="bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-md rounded-2xl p-6 sm:p-8 max-w-md w-full border border-white/20 shadow-2xl">
                 {(() => {
-                  const island = SKILL_ISLANDS.find(
-                    (i) => i.id === expandedIsland
+                  const island = skillIslands.find(
+                    (i) => i.id === expandedIsland,
                   );
                   if (!island) return null;
 
@@ -549,8 +556,8 @@ export default function SkillsSection() {
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {island.connections.map((connId) => {
-                              const connectedIsland = SKILL_ISLANDS.find(
-                                (i) => i.id === connId
+                              const connectedIsland = skillIslands.find(
+                                (i) => i.id === connId,
                               );
                               if (!connectedIsland) return null;
 

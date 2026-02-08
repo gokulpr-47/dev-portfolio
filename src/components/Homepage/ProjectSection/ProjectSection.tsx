@@ -43,84 +43,121 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Portfolio Website",
+    title: "Cloud-Native Invoice Processing Platform",
     description:
-      "A modern, interactive portfolio built with Next.js, TypeScript, and Three.js. Features smooth animations, dark theme, and responsive design.",
-    technologies: ["Next.js", "TypeScript", "Three.js", "Tailwind CSS"],
-    image: "/project-placeholder.svg",
-    githubUrl: "https://github.com/yourusername/portfolio",
-    liveUrl: "https://yourportfolio.com",
-    category: "Full Stack",
-    featured: true,
-    achievements: [
-      "Implemented smooth scroll animations and interactive elements",
-      "Achieved 95+ Lighthouse performance score",
-      "Created responsive design for all devices",
-    ],
-    learnings: [
-      "Advanced Three.js integration with React",
-      "Optimized bundle size and loading performance",
-      "Mastered TypeScript for type-safe development",
-    ],
-    role: "Solo Developer",
-    timeline: "3 months",
-    complexity: "Advanced",
-    theme: "cosmic",
-    accentColor: "#61DAFB",
-  },
-  {
-    id: 2,
-    title: "E-Commerce Platform",
-    description:
-      "A complete e-commerce solution with payment integration, user authentication, and admin dashboard.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "/project-placeholder.svg",
-    githubUrl: "https://github.com/yourusername/ecommerce",
+      "A full-stack cloud-native platform for processing invoices with secure authentication, containerized deployment, and optimized frontend performance.",
+    technologies: ["React", "Node.js", "MongoDB", "Docker", "AWS EC2", "JWT"],
+    image: "/invoice-platform.png",
+    githubUrl: "https://github.com/gokulpr-47/invoice-platform",
     liveUrl: "https://ecommerce-demo.com",
     category: "Full Stack",
     featured: true,
     achievements: [
-      "Integrated secure payment processing with Stripe",
-      "Built comprehensive admin dashboard with analytics",
-      "Implemented real-time inventory management",
+      "Designed modular REST APIs with JWT authentication",
+      "Deployed containerized services on AWS EC2 and S3",
+      "Improved UI performance and load time by 45%",
+      "Delivered full MVP under tight deadlines",
     ],
     learnings: [
-      "Payment gateway integration and security best practices",
-      "Database design for e-commerce applications",
-      "State management with Redux and Context API",
+      "Cloud-native architecture",
+      "Docker containerization",
+      "JWT authentication flows",
+      "Frontend performance optimization",
     ],
     role: "Full Stack Developer",
-    timeline: "6 months",
+    timeline: "5 months",
     complexity: "Advanced",
-    theme: "forest",
-    accentColor: "#4FC08D",
+    theme: "cloud",
+    accentColor: "#FF9900",
   },
+  // {
+  //   id: 2,
+  //   title: "E-Commerce Platform",
+  //   description:
+  //     "A complete e-commerce solution with payment integration, user authentication, and admin dashboard.",
+  //   technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+  //   image: "/project-placeholder.svg",
+  //   githubUrl: "https://github.com/yourusername/ecommerce",
+  //   liveUrl: "https://ecommerce-demo.com",
+  //   category: "Full Stack",
+  //   featured: true,
+  //   achievements: [
+  //     "Integrated secure payment processing with Stripe",
+  //     "Built comprehensive admin dashboard with analytics",
+  //     "Implemented real-time inventory management",
+  //   ],
+  //   learnings: [
+  //     "Payment gateway integration and security best practices",
+  //     "Database design for e-commerce applications",
+  //     "State management with Redux and Context API",
+  //   ],
+  //   role: "Full Stack Developer",
+  //   timeline: "6 months",
+  //   complexity: "Advanced",
+  //   theme: "forest",
+  //   accentColor: "#4FC08D",
+  // },
+  // {
+  //   id: 3,
+  //   title: "Task Management App",
+  //   description:
+  //     "A collaborative task management application with real-time updates and team features.",
+  //   technologies: ["Vue.js", "Laravel", "PostgreSQL", "WebSockets"],
+  //   image: "/project-placeholder.svg",
+  //   githubUrl: "https://github.com/yourusername/taskapp",
+  //   liveUrl: "https://taskapp-demo.com",
+  //   category: "Full Stack",
+  //   featured: false,
+  //   achievements: [
+  //     "Implemented real-time collaboration features",
+  //     "Built robust user authentication and permissions",
+  //     "Created intuitive drag-and-drop interface",
+  //   ],
+  //   learnings: [
+  //     "Real-time communication with WebSockets",
+  //     "Vue.js 3 Composition API and ecosystem",
+  //     "Laravel backend with Eloquent ORM",
+  //   ],
+  //   role: "Backend Developer",
+  //   timeline: "4 months",
+  //   complexity: "Intermediate",
+  //   theme: "ocean",
+  //   accentColor: "#2496ED",
+  // },
   {
-    id: 3,
-    title: "Task Management App",
+    id: 2,
+    title: "LeetClash – LeetCode Motivation Telegram Bot",
     description:
-      "A collaborative task management application with real-time updates and team features.",
-    technologies: ["Vue.js", "Laravel", "PostgreSQL", "WebSockets"],
-    image: "/project-placeholder.svg",
-    githubUrl: "https://github.com/yourusername/taskapp",
-    liveUrl: "https://taskapp-demo.com",
-    category: "Full Stack",
-    featured: false,
+      "A Telegram bot designed to help developers stay consistent with LeetCode practice through reminders, streak tracking, leaderboards, and personalized goals.",
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "Telegram Bot API",
+      "MongoDB",
+      "Cron Jobs",
+    ],
+    image: "/leetclash.png",
+    githubUrl: "https://github.com/gokulpr-47/leetclash",
+    liveUrl: "https://t.me/LeetClashBot",
+    category: "Backend",
+    featured: true,
     achievements: [
-      "Implemented real-time collaboration features",
-      "Built robust user authentication and permissions",
-      "Created intuitive drag-and-drop interface",
+      "Built automated daily reminders and coding streak tracking system",
+      "Implemented leaderboard system for friendly competitive coding",
+      "Designed progress analytics including solved count and difficulty breakdown",
+      "Added customizable weekly and monthly coding goals with notifications",
     ],
     learnings: [
-      "Real-time communication with WebSockets",
-      "Vue.js 3 Composition API and ecosystem",
-      "Laravel backend with Eloquent ORM",
+      "Telegram Bot API and webhook integrations",
+      "Cron-based scheduling and background jobs",
+      "Designing gamification systems for user engagement",
+      "Database schema design for streaks and user stats",
     ],
-    role: "Backend Developer",
-    timeline: "4 months",
+    role: "Backend Engineer",
+    timeline: "2–3 weeks",
     complexity: "Intermediate",
-    theme: "ocean",
-    accentColor: "#2496ED",
+    theme: "code",
+    accentColor: "#0088CC",
   },
 ];
 
@@ -217,7 +254,7 @@ const ProjectCard = React.memo(
           <div className="relative h-28 sm:h-32 overflow-hidden">
             <div
               className={`absolute inset-0 bg-gradient-to-br ${getProjectTheme(
-                project
+                project,
               )}`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -429,8 +466,8 @@ const ProjectCard = React.memo(
                       project.complexity === "Advanced"
                         ? "bg-red-500/20 text-red-400 border border-red-400"
                         : project.complexity === "Intermediate"
-                        ? "bg-yellow-500/20 text-yellow-400 border border-yellow-400"
-                        : "bg-green-500/20 text-green-400 border border-green-400"
+                          ? "bg-yellow-500/20 text-yellow-400 border border-yellow-400"
+                          : "bg-green-500/20 text-green-400 border border-green-400"
                     }`}
                   >
                     {project.complexity}
@@ -474,7 +511,7 @@ const ProjectCard = React.memo(
         </div>
       </div>
     );
-  }
+  },
 );
 
 ProjectCard.displayName = "ProjectCard";
@@ -516,7 +553,7 @@ export default function ProjectSection() {
         setHoveredProject(projectId);
       }
     },
-    [isTouchDevice]
+    [isTouchDevice],
   );
 
   const handleProjectLeave = useCallback(() => {
@@ -529,7 +566,7 @@ export default function ProjectSection() {
     (projectId: number) => {
       setExpandedProject(expandedProject === projectId ? null : projectId);
     },
-    [expandedProject]
+    [expandedProject],
   );
 
   // Memoized animated particles for better performance

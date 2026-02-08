@@ -47,15 +47,32 @@ const LandingSection = ({ scrollToSection }: LandingSectionProps) => {
       {/* Navbar */}
       <div className="absolute w-full px-4 py-4 sm:px-10 sm:py-6 lg:px-20 lg:py-10 flex flex-wrap justify-between items-center gap-4">
         <div className="socials flex gap-5 mt-2 ml-2">
-          {/* Added margin-top (mt-2) and margin-left (ml-2) */}
-          <FontAwesomeIcon icon={faLinkedinIn} className="text-xl" />
-          <FontAwesomeIcon icon={faGithubAlt} className="text-xl" />
+          <a
+            href="https://www.linkedin.com/in/gokul-p-r-744710206"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 transition"
+          >
+            <FontAwesomeIcon icon={faLinkedinIn} className="text-xl" />
+          </a>
+
+          <a
+            href="https://github.com/gokulpr-47"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-400 transition"
+          >
+            <FontAwesomeIcon icon={faGithubAlt} className="text-xl" />
+          </a>
         </div>
         <div className="flex items-center mt-2 mr-2">
-          {/* Added margin-top (mt-2) and margin-right (mr-2) */}
-          <FontAwesomeIcon icon={faEnvelope} className="pe-2 text-xl" />
-          <p className={`${karla.className} ml-2`}>GET IN TOUCH</p>
-          {/* Added margin-left (ml-2) */}
+          <a
+            href="mailto:gokulpr47@gmail.com"
+            className="flex items-center hover:text-green-400 transition"
+          >
+            <FontAwesomeIcon icon={faEnvelope} className="pe-2 text-xl" />
+            <p className={`${karla.className} ml-2`}>GET IN TOUCH</p>
+          </a>
         </div>
       </div>
 

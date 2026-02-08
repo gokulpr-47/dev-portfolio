@@ -12,7 +12,6 @@ import LandingSection from "@/components/Homepage/LandingSection/LandingSection"
 import ExperienceSection from "@/components/Homepage/ExperienceSection/ExperienceSection";
 import SkillsSection from "@/components/Homepage/SkillsSection/SkillsSection";
 import AboutSection from "@/components/Homepage/AboutSection/AboutSection";
-import Footer from "@/components/Homepage/Footer/Footer";
 
 // Lazy load heavy components
 const ProjectSection = lazy(
@@ -142,9 +141,9 @@ export default function Home() {
           <div className="flex-1">
             <AboutSection />
           </div>
-          <div className="flex-shrink-0">
+          {/* <div className="flex-shrink-0">
             <Footer />
-          </div>
+          </div> */}
         </div>
       </section>
 
