@@ -17,6 +17,7 @@ import {
   faCode,
   faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
+import { projects } from "@/constants";
 
 const prompt = Prompt({ weight: "600", subsets: ["latin"] });
 const karla = Karla({ weight: "200", subsets: ["latin"] });
@@ -625,7 +626,7 @@ export default function ProjectSection() {
       <div className="w-full flex items-start justify-center flex-1 overflow-y-auto scrollbar-hidden">
         <div className="w-full max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pb-6 sm:pb-8">
-            {PROJECTS.map((project) => {
+            {projects.map((project) => {
               const isHovered = hoveredProject === project.id;
               const isExpanded = expandedProject === project.id;
 
