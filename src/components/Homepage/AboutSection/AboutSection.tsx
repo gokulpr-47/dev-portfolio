@@ -46,18 +46,26 @@ export default function AboutSection() {
                   className={`${rounded.medium} overflow-hidden ${gradients.card} p-4 sm:p-6 md:p-8 flex items-center justify-center`}
                 >
                   <div className="text-center">
-                    <div
+                    {/* <div
                       className={`w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-3 sm:mb-4 ${rounded.full} bg-gradient-to-br ${profileImage.placeholder.gradient} flex items-center justify-center`}
                     >
                       <span className="text-2xl sm:text-3xl md:text-4xl text-white font-bold">
                         {profileImage.placeholder.initials}
                       </span>
+                    </div> */}
+                    <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-3 sm:mb-4 relative">
+                      <Image
+                        src={profileImage.src}
+                        alt={profileImage.alt}
+                        fill
+                        className={`${rounded.full} object-cover object-[center_15%]`}
+                      />
                     </div>
-                    <p
+                    {/* <p
                       className={`${karla.className} text-gray-300 text-xs sm:text-sm`}
                     >
                       Your Photo Here
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>
@@ -102,18 +110,26 @@ export default function AboutSection() {
                   className={`${rounded.medium} overflow-hidden ${gradients.card} p-4 sm:p-6 md:p-8 flex items-center justify-center`}
                 >
                   <div className="text-center">
-                    <div
+                    {/* <div
                       className={`w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-3 sm:mb-4 ${rounded.full} bg-gradient-to-br ${profileImage.placeholder.gradient} flex items-center justify-center`}
                     >
                       <span className="text-2xl sm:text-3xl md:text-4xl text-white font-bold">
                         {profileImage.placeholder.initials}
                       </span>
+                    </div> */}
+                    <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-3 sm:mb-4 relative">
+                      <Image
+                        src={profileImage.src}
+                        alt={profileImage.alt}
+                        fill
+                        className={`${rounded.full} object-cover object-[center_15%]`}
+                      />
                     </div>
-                    <p
+                    {/* <p
                       className={`${karla.className} text-gray-300 text-xs sm:text-sm`}
                     >
                       Your Photo Here
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>

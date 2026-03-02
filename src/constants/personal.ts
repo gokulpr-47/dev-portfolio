@@ -56,6 +56,7 @@ export const contactInfo = {
 
 // Profile image placeholder
 export const profileImage = {
+  src: "/Gokul.png",
   placeholder: {
     initials: "GP",
     size: "w-48 h-48",
